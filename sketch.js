@@ -89,7 +89,7 @@ function draw() {
 
   if(gameState === PLAY){
 
-    camera.position.y = trex.y;
+    camera.position.x = trex.y;
 
     gameOver.visible = false;
     restart.visible = false;
