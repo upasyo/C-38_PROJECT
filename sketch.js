@@ -84,7 +84,7 @@ function draw() {
   //displaying score
   fill("black");
   textSize(20);
-  text("Score: "+ score, displayWidth/1.7,220);
+  text("Score: "+ score, camera.position.x,220);
   
 
   if(gameState === PLAY){
