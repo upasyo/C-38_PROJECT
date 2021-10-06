@@ -52,10 +52,10 @@ function setup() {
   ground.addImage("ground",groundImage);
   ground.x = ground.width /2;
   
-  gameOver = createSprite(camera.position.x,displayHeight/3);
+  gameOver = createSprite(displayWidth/8,displayHeight/3);
   gameOver.addImage(gameOverImg);
   
-  restart = createSprite(camera.position.x,displayHeight/2.5);
+  restart = createSprite(displayWidth/8  ,displayHeight/2.5);
   restart.addImage(restartImg);
   
  
@@ -84,12 +84,12 @@ function draw() {
   //displaying score
   fill("black");
   textSize(20);
-  text("Score: "+ score, camera.position.x,220);
+  text("Score: "+ score, displayWidth/2,100);
   
 
   if(gameState === PLAY){
 
-    trex.x=camera.position.x;
+    camera.position.x=trex.x;/*x=5*/
 
     gameOver.visible = false;
     restart.visible = false;
@@ -104,12 +104,12 @@ function draw() {
     }
     
     if (ground.x < 0){
-      ground.x = ground.width/2;
+      ground.x = ground.width/7;
     }
     
     
     //jump when the space key is pressed
-    if(keyDown("space") && trex.y >= 100) {
+    if(keyDown("space") && trex.y >= displayWidth/4) {
         trex.velocityY = -15;
         jumpSound.play();
     }
@@ -172,7 +172,7 @@ function reset(){
 
 function spawnObstacles(){
  if (frameCount % 120 === 0){
-   var obstacle = createSprite(camera.position.x,displayHeight/1.5,10,40);
+   var obstacle = createSprite(displayWidth/1.2 ,displayHeight/1.5,10,40);
    obstacle.velocityX = -(6 + score/100);
    
     //generate random obstacles
