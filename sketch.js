@@ -63,7 +63,7 @@ function setup() {
   restart.scale = 0.5;
   
   invisibleGround = createSprite(displayWidth/6,displayHeight/1.4,800,10);
-  invisibleGround.visible = true;
+  invisibleGround.visible = false;
   
   //create Obstacle and Cloud Groups
   obstaclesGroup = createGroup();
